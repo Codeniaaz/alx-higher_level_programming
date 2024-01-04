@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_safe(board, row, col, n):
-    # Check if there is a queen in the same column
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -10,9 +10,11 @@ def is_safe(board, row, col, n):
             return False
     return True
 
+
 def print_solution(board):
     solution = [[i, board[i]] for i in range(len(board))]
     print(solution)
+
 
 def solve_nqueens(board, row, n):
     if row == n:
@@ -23,6 +25,7 @@ def solve_nqueens(board, row, n):
         if is_safe(board, row, col, n):
             board[row] = col
             solve_nqueens(board, row + 1, n)
+
 
 def main():
     # Check if the correct number of arguments is provided
@@ -47,6 +50,6 @@ def main():
     # Solve and print solutions
     solve_nqueens(chessboard, 0, N)
 
+
 if __name__ == "__main__":
     main()
-
