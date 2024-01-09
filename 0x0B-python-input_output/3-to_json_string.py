@@ -2,6 +2,7 @@
 '''module that converts to json'''
 import json
 
+
 def to_json_string(my_obj):
     """
     Convert a Python object to a JSON-formatted string.
@@ -14,4 +15,3 @@ def to_json_string(my_obj):
     """
     text = json.dumps(my_obj)
     return text
-
