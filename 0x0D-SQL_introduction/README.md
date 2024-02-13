@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Sure, here are some key points about SQL (Structured Query Language):
+=======
+ure, here are some key points about SQL (Structured Query Language):
+>>>>>>> 60fb9c07eed67ebd1f7bf8fc3455262d67871425
 
 Purpose: SQL is a programming language designed for managing and manipulating relational databases.
 
