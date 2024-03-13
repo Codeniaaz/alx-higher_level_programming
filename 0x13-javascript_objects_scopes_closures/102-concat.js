@@ -1,10 +1,22 @@
+#!/usr/bin/node
 const fs = require('fs');
 
-const [, , sourceFilePath1, sourceFilePath2, destinationFilePath] = process.argv;
+const fileA = process.argv[2];
+const fileB = process.argv[3];
+const fileC = process.argv[4];
 
-const content1 = fs.readFileSync(sourceFilePath1, 'utf8');
-const content2 = fs.readFileSync(sourceFilePath2, 'utf8');
+if (
+  fs.existsSync(fileA) &&
+fs.statSync(fileA).isFile &&
+fs.existsSync(fileB) &&
+fs.statSync(fileB).isFile &&
+fileC !== undefined
+) {
+  const fileAContent = fs.readFileSync(fileA);
+  const fileBContent = fs.readFileSync(fileB);
+  const stream = fs.createWriteStream(fileC);
 
-const concatenatedContent = `${content1.trim()}\n${content2.trim()}`;
-
-fs.writeFileSync(destinationFilePath, concatenatedContent);
+  stream.write(fileAContent);
+  stream.write(fileBContent);
+  stream.end();
+}
